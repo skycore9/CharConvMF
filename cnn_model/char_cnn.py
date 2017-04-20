@@ -16,12 +16,12 @@ from data_utils import Data
 class CNN_Module(object):
     def __init__(self, data_path, is_polarity=False):
         # CNN architecture
-        self.conv_layers = [[256, 7, 3],
-                            [256, 7, 3],
-                            [256, 3, None],
-                            [256, 3, None],
-                            [256, 3, None],
-                            [256, 3, 3]]
+        self.conv_layers = [[1024, 7, 3],
+                            [1024, 7, 3],
+                            [1024, 3, None],
+                            [1024, 3, None],
+                            [1024, 3, None],
+                            [1024, 3, 3]]
         self.fully_layers = [1024, 1024]
         self.l0 = 1014
         self.alphabet = "abcdefghijklmnopqrstuvwxyz0123456789-,;.!?:'\"/\\|_@#$%^&*~`+-=<>()[]{}"

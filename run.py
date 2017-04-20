@@ -32,6 +32,9 @@ parser.add_argument("-reg_qi", "--regularization_qi", type=float,
 parser.add_argument("-reg_yj", "--regularization_yj", type=float,
                     help="Regularization factor for yj to avoid overfiting.")
 
+parser.add_argument("-l", "--learning_rate", type=float,
+                    help="learning rate for SGD to train model.")
+
 args = parser.parse_args()
 is_train_cnn = args.train_cnn_module
 if is_train_cnn == False:
@@ -53,6 +56,7 @@ else:
     reg_pu = args.regularization_pu
     reg_qi = args.regularization_qi
     reg_yj = args.regularization_yj
+    learning_rate = args.learning_rate
     if rating_path is None:
         sys.exit("Argument missing - rating_path is required")
     if document_path is None:
@@ -66,7 +70,6 @@ else:
                         document_path=document_path,
                         is_polarity=is_polarity)
 
-    learning_rate = 0.0001
     # grid search
     print "##################################################################"
     print "\treg_bu=%f, reg_bi=%f, reg_pu=%f, reg_qi=%f, reg_yj=%f"  \
