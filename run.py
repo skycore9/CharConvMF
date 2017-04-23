@@ -37,7 +37,7 @@ parser.add_argument("-l", "--learning_rate", type=float,
 
 args = parser.parse_args()
 is_train_cnn = args.train_cnn_module
-if is_train_cnn == False:
+if is_train_cnn:
     cnn_data_path = args.cnn_data_path
     is_polarity = args.is_polarity
     if cnn_data_path is None:
