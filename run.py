@@ -23,7 +23,7 @@ parser.add_argument("-i", "--raw_item_document_data_path", type=str,
 # set regularization factor
 parser.add_argument("-reg_bu", "--regularization_bu", type=float,
                     help="Regularization factor for bu to avoid overfiting.")
-parser.add_argument("-reg_wi", "--regularization_bi", type=float,
+parser.add_argument("-reg_wi", "--regularization_wi", type=float,
                     help="Regularization factor for bi (or wi) to avoid overfiting.")
 parser.add_argument("-reg_pu", "--regularization_pu", type=float,
                     help="Regularization factor for pu to avoid overfiting.")
@@ -52,7 +52,7 @@ else:
     is_polarity = args.is_polarity
 
     reg_bu = args.regularization_bu
-    reg_bi = args.regularization_bi
+    reg_bi = args.regularization_wi
     reg_pu = args.regularization_pu
     reg_qi = args.regularization_qi
     reg_yj = args.regularization_yj
